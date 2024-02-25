@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Items</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 10px;
+            background-color: #FFFFFF; /* Warna putih */
+            color: #343A40; /* Warna abu-abu kehitaman */
+        }
+
+        h2 {
+            color: #343A40; /* Warna abu-abu kehitaman */
+            font-size: 24px; /* Ukuran font */
+            margin-bottom: 5px; /* Margin bawah */
+        }
+
+        p {
+            font-size: 12px; /* Ukuran font */
+            color: #343A40; /* Warna abu-abu kehitaman */
+            margin-bottom: 10px; /* Margin bawah */
+        }
+
+        form {
+            background-color: #343A40; /* Warna abu-abu kehitaman */
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        label {
+            color: #FFFFFF; /* Warna putih */
+            margin: 5px;
+            font-size: 14px; /* Ukuran font */
+        }
+
+        select, button {
+            margin: 5px;
+            font-size: 14px; /* Ukuran font */
+            color: #343A40; /* Warna abu-abu kehitaman */
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #343A40; /* Warna abu-abu kehitaman */
+        }
+
+        .iframe-container {
+            margin-top: 20px; /* Jarak antara kalkulator dan iframe */
+            margin-bottom: 20px; /* Jarak antara iframe dan footer */
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Ratio 16:9 */
+        }
+
+        .iframe-container iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .footer {
+            font-size: 10px; /* Ukuran font */
+            margin-top: 20px;
+            color: #343A40; /* Warna abu-abu kehitaman */
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculator Items</h2>
+    <p>This Calculator is run by <a href="https://x.com/PlatoNeeds" target="_blank" style="color: #343A40;">PlatoNeeds</a></p>
+    
+    <form id="calculatorForm">
+        <label for="jenisItems" style="color: #FFFFFF;">Jenis Items:</label>
+        <select id="jenisItems" required style="color: #343A40;">
+            <option value="9">Items Shop</option>
+            <option value="12">Items Rare</option>
+        </select>
+
+        <br> <!-- Spasi ke bawah -->
+
+        <label for="hargaItems" style="color: #FFFFFF;">Harga Items:</label>
+        <select id="hargaItems" required style="color: #343A40;">
+            <!-- Opsi harga items -->
+            <!-- Anda dapat menambahkan lebih banyak opsi sesuai kebutuhan -->
+            <option value="50">50 coins</option>
+            <option value="100">100 coins</option>
+            <option value="150">150 coins</option>
+            <option value="200">200 coins</option>
+            <option value="250">250 coins</option>
+            <option value="500">500 coins</option>
+            <option value="750">750 coins</option>
+            <option value="1000">1000 coins</option>
+            <option value="1250">1250 coins</option>
+            <option value="1500">1500 coins</option>
+            <option value="1750">1750 coins</option>
+            <option value="2000">2000 coins</option>
+            <option value="2500">2500 coins</option>
+            <option value="2750">2750 coins</option>
+            <option value="3000">3000 coins</option>
+            <option value="3500">3500 coins</option>
+            <option value="4000">4000 coins</option>
+            <option value="4500">4500 coins</option>
+            <option value="5000">5000 coins</option>
+            <option value="5500">5500 coins</option>
+            <!-- Dan seterusnya sesuai kelipatan 500 hingga 10000 -->
+            <option value="6000">6000 coins</option>
+            <option value="6500">6500 coins</option>
+            <option value="7000">7000 coins</option>
+            <option value="7500">7500 coins</option>
+            <option value="8000">8000 coins</option>
+            <option value="8500">8500 coins</option>
+            <option value="9000">9000 coins</option>
+            <option value="9500">9500 coins</option>
+            <option value="10000">10000 coins</option>
+        </select>
+
+        <br> <!-- Spasi ke bawah -->
+
+        <button type="button" onclick="calculateTotal()" style="color: #343A40;">Hitung Total</button>
+    </form>
+
+    <div id="result"></div>
+
+    <p>Kalkulator ini difungsikan untuk memeriksa harga barang Plato yang akan dibeli oleh pelanggan. Silakan cari nama items dan harga koinnya di situs web <a href="https://platopedia.com/items" target="_blank" style="color: #343A40;">platopedia.com/items</a>.</p>
+
+    <div class="footer">
+        Last Update: 25/02/2024  |  Mon Cheri.
+        <br>
+        Web Platopedia: <a href="https://platopedia.com/items" target="_blank" style="color: #343A40;">platopedia.com/items</a> (Sumber: Platopedia)
+    </div>
+
+    <div class="iframe-container">
+        <iframe src="https://platopedia.com/items" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            var jenisItems = document.getElementById('jenisItems').value;
+            var hargaItems = document.getElementById('hargaItems').value;
+
+            var totalHarga = jenisItems * hargaItems;
+
+            document.getElementById('result').innerHTML = `Total Harga: ${totalHarga.toLocaleString()}`;
+        }
+    </script>
+</body>
+</html>
